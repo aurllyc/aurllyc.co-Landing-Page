@@ -46,6 +46,7 @@ Tanpa framework. Karena kadang manusia merasa “ngoding manual biar lebih fleks
 project/
 │
 ├── index.html
+├── style.css
 ├── README.md
 └── assets/
     ├── images/
