@@ -178,7 +178,7 @@ nav {
   padding: 9px 20px;
   border-radius: var(--r-pill);
   text-decoration: none;
-  border: 1px solid rgba(212, 184, 150, 0.3);
+  border: 1.5px solid #111111;
   cursor: pointer;
   letter-spacing: 0.01em;
   display: inline-flex;
@@ -565,12 +565,13 @@ nav {
 }
 
 .about-card {
-  background: var(--card);
+  background: #f5f2eb;
   border: 1px solid var(--border-soft);
   border-radius: var(--r-lg);
   padding: 28px 24px;
   position: relative;
   overflow: hidden;
+
   transition: border-color 0.3s;
 }
 
@@ -749,6 +750,15 @@ nav {
   align-items: center;
   gap: 6px;
   font-weight: 500;
+  
+  border: 1px solid #dcdcdc;
+  color: #111111;
+  background: white;
+  padding: 6px 10px;
+  border-radius: var(--r-pill);
+  border: 1.5px solid #111111;
+  cursor: pointer;
+  letter-spacing: 0.01em;
 }
 
 /* ===================== PORTFOLIO ===================== */
