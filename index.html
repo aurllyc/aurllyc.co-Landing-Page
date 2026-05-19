@@ -9,16 +9,19 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://kit.fontawesome.com/YOUR_KIT_CODE.js"
-      crossorigin="anonymous"
-    ></script>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="asset/Logo/logo 1.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="https://cloudflare.com" />
+
   </head>
   <body>
     <!-- NAVBAR  -->
     <nav>
-      <div class="nav-logo">aurl<span>lyc</span>.co</div>
+      <a class="nav-logo" href="#">aurl<span>lyc</span>.co</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -27,7 +30,20 @@
         <li><a href="#faq">FAQ</a></li>
       </ul>
       <a href="#cta" class="btn-cta">Mulai Sekarang</a>
+      <button class="nav-hamburger" aria-label="Menu" id="hamburgerBtn">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
+
+    <!-- Mobile nav drawer -->
+    <ul class="nav-drawer" id="navDrawer">
+      <li><a href="#about" onclick="closeNav()">About</a></li>
+      <li><a href="#services" onclick="closeNav()">Services</a></li>
+      <li><a href="#portfolio" onclick="closeNav()">Portfolio</a></li>
+      <li><a href="#pricing" onclick="closeNav()">Pricing</a></li>
+      <li><a href="#faq" onclick="closeNav()">FAQ</a></li>
+      <a href="#cta" class="btn-cta" onclick="closeNav()">Mulai Sekarang</a>
+    </ul>
 
     <!--  HERO  -->
     <section id="hero">
@@ -77,14 +93,12 @@
                     style="
                       width: 28px;
                       height: 28px;
-                      background: rgba(212, 184, 150, 0.12);
+                      background: rgba(255, 237, 206, 0.15);
                       border-radius: 6px;
-                      border: 1px solid rgba(212, 184, 150, 0.15);
+                      border: 1px solid rgba(255, 237, 206, 0.2);
                     "
                   ></div>
-                  <div style="flex: 1">
-                    <div class="mock-header-bar"></div>
-                  </div>
+                  <div style="flex: 1"><div class="mock-header-bar"></div></div>
                 </div>
                 <div class="mock-text-lines">
                   <div class="mock-line" style="width: 100%"></div>
@@ -95,7 +109,7 @@
                   style="
                     margin-top: 12px;
                     height: 4px;
-                    background: rgba(212, 184, 150, 0.2);
+                    background: rgba(255, 237, 206, 0.25);
                     border-radius: 2px;
                     width: 45%;
                   "
@@ -104,12 +118,12 @@
                   <div class="mock-card-sm"></div>
                   <div
                     class="mock-card-sm"
-                    style="background: rgba(212, 184, 150, 0.04)"
+                    style="background: rgba(255, 237, 206, 0.05)"
                   ></div>
                   <div class="mock-card-sm"></div>
                   <div
                     class="mock-card-sm"
-                    style="background: rgba(212, 184, 150, 0.04)"
+                    style="background: rgba(255, 237, 206, 0.05)"
                   ></div>
                 </div>
                 <div style="margin-top: 8px; display: flex; gap: 6px">
@@ -117,7 +131,7 @@
                     style="
                       height: 22px;
                       width: 80px;
-                      background: rgba(212, 184, 150, 0.15);
+                      background: rgba(255, 237, 206, 0.18);
                       border-radius: 11px;
                     "
                   ></div>
@@ -141,11 +155,42 @@
       <div class="hero-bottom">
         <div class="ig-preview-label">Instagram Feed Preview @aurllyc</div>
         <div class="ig-grid">
-          <div class="ig-cell"><div class="placeholder-img">✦</div></div>
-          <div class="ig-cell"><div class="placeholder-img">◆</div></div>
-          <div class="ig-cell"><div class="placeholder-img">▲</div></div>
-          <div class="ig-cell"><div class="placeholder-img">●</div></div>
-          <div class="ig-cell"><div class="placeholder-img">✦</div></div>
+          <!-- Replace src values with actual asset links when available -->
+          <div class="ig-cell">
+            <img
+              src="asset/images/flyer1.jpg"
+              alt="Portfolio preview 1"
+              loading="lazy"
+            />
+          </div>
+          <div class="ig-cell">
+            <img
+              src="asset/images/img (2).jpg"
+              alt="Portfolio preview 2"
+              loading="lazy"
+            />
+          </div>
+          <div class="ig-cell">
+            <img
+              src="asset/images\img (3).jpg"
+              alt="Portfolio preview 3"
+              loading="lazy"
+            />
+          </div>
+          <div class="ig-cell">
+            <img
+              src="asset/images\img (2).png"
+              alt="Portfolio preview 4"
+              loading="lazy"
+            />
+          </div>
+          <div class="ig-cell">
+            <img
+              src="asset/images\img (3).png"
+              alt="Portfolio preview 5"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -184,7 +229,8 @@
       <div class="about-left">
         <span class="section-tag">About</span>
         <h2 style="margin-bottom: 20px">
-          Design yang<br /><em style="color: var(--beige); font-style: italic"
+          Design yang<br /><em
+            style="color: var(--accent-mid); font-style: italic"
             >bekerja keras</em
           >
           buat brand kamu.
@@ -299,9 +345,7 @@
             <span class="tag">Story Template</span>
             <span class="tag">Highlights</span>
           </div>
-          <a href="#pricing" class="service-link button-outline"
-            >Lihat detail →</a
-          >
+          <a href="#pricing" class="service-link">Lihat detail →</a>
         </div>
 
         <div class="service-card">
@@ -348,6 +392,8 @@
           justify-content: space-between;
           align-items: flex-end;
           margin-bottom: 40px;
+          flex-wrap: wrap;
+          gap: 12px;
         "
       >
         <div>
@@ -366,34 +412,14 @@
         <div class="portfolio-item">
           <div class="portfolio-bg">
             <div class="portfolio-label">Brand Identity</div>
-            <div class="portfolio-placeholder">
-              <svg
-                width="60"
-                height="60"
-                viewBox="0 0 60 60"
-                fill="none"
-                class="portfolio-shape"
-                style="opacity: 0.2"
-              >
-                <circle
-                  cx="30"
-                  cy="30"
-                  r="25"
-                  stroke="#d4b896"
-                  stroke-width="1"
-                />
-                <circle
-                  cx="30"
-                  cy="30"
-                  r="15"
-                  stroke="#d4b896"
-                  stroke-width="1"
-                />
-              </svg>
-            </div>
+            <img
+              class="portfolio-img"
+              src="asset/images/logo.jpeg"
+              alt="aurllyc.co"
+            />
             <div class="portfolio-overlay">
               <div class="portfolio-cat">Brand Identity</div>
-              <div class="portfolio-title">Kopi Nusantara Co.</div>
+              <div class="portfolio-title">aurllyc.co</div>
             </div>
           </div>
         </div>
@@ -401,37 +427,14 @@
         <div class="portfolio-item">
           <div class="portfolio-bg">
             <div class="portfolio-label">Social Media</div>
-            <div class="portfolio-placeholder">
-              <svg
-                width="50"
-                height="50"
-                viewBox="0 0 50 50"
-                fill="none"
-                class="portfolio-shape"
-                style="opacity: 0.2"
-              >
-                <rect
-                  x="5"
-                  y="5"
-                  width="40"
-                  height="40"
-                  rx="8"
-                  stroke="#d4b896"
-                  stroke-width="1"
-                />
-                <rect
-                  x="15"
-                  y="15"
-                  width="20"
-                  height="20"
-                  stroke="#d4b896"
-                  stroke-width="1"
-                />
-              </svg>
-            </div>
+            <img
+              class="portfolio-img"
+              src="asset/images/Flyer2.jpg"
+              alt="Sage Skincare Instagram Feed"
+            />
             <div class="portfolio-overlay">
               <div class="portfolio-cat">Social Media</div>
-              <div class="portfolio-title">Sage Skincare</div>
+              <div class="portfolio-title">Justicia Kanogama Fun Run</div>
             </div>
           </div>
         </div>
@@ -439,26 +442,14 @@
         <div class="portfolio-item">
           <div class="portfolio-bg">
             <div class="portfolio-label">Logo Design</div>
-            <div class="portfolio-placeholder">
-              <svg
-                width="55"
-                height="55"
-                viewBox="0 0 55 55"
-                fill="none"
-                class="portfolio-shape"
-                style="opacity: 0.2"
-              >
-                <polygon
-                  points="27.5,5 50,45 5,45"
-                  stroke="#d4b896"
-                  stroke-width="1"
-                  fill="none"
-                />
-              </svg>
-            </div>
+            <img
+              class="portfolio-img"
+              src="asset/images/logo.png"
+              alt="Yayasan Sun Collage Bina Bangsa"
+            />
             <div class="portfolio-overlay">
               <div class="portfolio-cat">Logo Design</div>
-              <div class="portfolio-title">Arka Studio</div>
+              <div class="portfolio-title">Yayasan Sun Collage Bina Bangsa</div>
             </div>
           </div>
         </div>
@@ -466,116 +457,45 @@
         <div class="portfolio-item">
           <div class="portfolio-bg">
             <div class="portfolio-label">Brand Guide</div>
-            <div class="portfolio-placeholder">
-              <svg
-                width="55"
-                height="55"
-                viewBox="0 0 55 55"
-                fill="none"
-                class="portfolio-shape"
-                style="opacity: 0.2"
-              >
-                <rect
-                  x="5"
-                  y="5"
-                  width="20"
-                  height="20"
-                  stroke="#d4b896"
-                  stroke-width="1"
-                />
-                <rect
-                  x="30"
-                  y="30"
-                  width="20"
-                  height="20"
-                  stroke="#d4b896"
-                  stroke-width="1"
-                />
-                <line
-                  x1="25"
-                  y1="15"
-                  x2="30"
-                  y2="40"
-                  stroke="#d4b896"
-                  stroke-width="1"
-                />
-              </svg>
-            </div>
+            <img
+              class="portfolio-img"
+              src="asset/images/Logo Yayasan.png"
+              alt="Yayasan Sun Collage Bina Bangsa"
+            />
             <div class="portfolio-overlay">
               <div class="portfolio-cat">Brand Guide</div>
-              <div class="portfolio-title">Rupa Agency</div>
+              <div class="portfolio-title">Yayasan Sun Collage Bina Bangsa</div>
             </div>
           </div>
         </div>
 
         <div class="portfolio-item">
           <div class="portfolio-bg">
-            <div class="portfolio-label">Packaging</div>
-            <div class="portfolio-placeholder">
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                class="portfolio-shape"
-                style="opacity: 0.2"
-              >
-                <path
-                  d="M24 4 L44 16 L44 32 L24 44 L4 32 L4 16 Z"
-                  stroke="#d4b896"
-                  stroke-width="1"
-                  fill="none"
-                />
-              </svg>
-            </div>
+            <div class="portfolio-label">Banner</div>
+            <img
+              class="portfolio-img"
+              src="asset/images/banner 1.jpg"
+              alt="Kanogama Fun Run"
+            />
+
             <div class="portfolio-overlay">
-              <div class="portfolio-cat">Packaging</div>
-              <div class="portfolio-title">Bumi Herbal</div>
+              <div class="portfolio-cat">Banner</div>
+              <div class="portfolio-title">Justicia Kanogama Fun Run</div>
             </div>
           </div>
         </div>
 
         <div class="portfolio-item">
           <div class="portfolio-bg">
-            <div class="portfolio-label">Social Media</div>
-            <div class="portfolio-placeholder">
-              <svg
-                width="52"
-                height="52"
-                viewBox="0 0 52 52"
-                fill="none"
-                class="portfolio-shape"
-                style="opacity: 0.2"
-              >
-                <circle
-                  cx="26"
-                  cy="26"
-                  r="20"
-                  stroke="#d4b896"
-                  stroke-width="1"
-                  fill="none"
-                />
-                <line
-                  x1="6"
-                  y1="26"
-                  x2="46"
-                  y2="26"
-                  stroke="#d4b896"
-                  stroke-width="1"
-                />
-                <line
-                  x1="26"
-                  y1="6"
-                  x2="26"
-                  y2="46"
-                  stroke="#d4b896"
-                  stroke-width="1"
-                />
-              </svg>
-            </div>
+            <div class="portfolio-label">Menu Design</div>
+            <img
+              class="portfolio-img"
+              src="asset/images/img (1).jpg"
+              alt="Lusid Collective Menu Design"
+            />
             <div class="portfolio-overlay">
-              <div class="portfolio-cat">Social Media</div>
-              <div class="portfolio-title">Lusid Collective</div>
+              <div class="portfolio-cat">Menu Design</div>
+              <div class="portfolio-title">Ayam Geprek Ali</div>
             </div>
           </div>
         </div>
@@ -589,8 +509,9 @@
       <div class="section-header">
         <span class="section-tag">How We Work</span>
         <h2 style="margin-bottom: 12px">
-          Proses Kami,<br /><em style="color: var(--beige); font-style: italic"
-            >Simpel & Transparan</em
+          Proses Kami,<br /><em
+            style="color: var(--accent-mid); font-style: italic"
+            >Simpel &amp; Transparan</em
           >
         </h2>
       </div>
@@ -602,7 +523,7 @@
           <h4>Discover</h4>
           <p>
             Kenali brand kamu, target audience, dan tujuan bisnis secara
-            mendalam lewat brief & diskusi awal.
+            mendalam lewat brief &amp; diskusi awal.
           </p>
         </div>
         <div class="process-step">
@@ -673,8 +594,8 @@
           >
             <div
               style="
-                background: rgba(212, 184, 150, 0.06);
-                border: 1px solid rgba(212, 184, 150, 0.12);
+                background: rgba(255, 237, 206, 0.08);
+                border: 1px solid rgba(255, 237, 206, 0.18);
                 border-radius: 12px;
                 padding: 16px;
                 text-align: center;
@@ -684,7 +605,7 @@
                 style="
                   font-family: var(--ff-display);
                   font-size: 28px;
-                  color: var(--beige);
+                  color: var(--accent-mid);
                   font-weight: 700;
                 "
               >
@@ -702,8 +623,8 @@
             </div>
             <div
               style="
-                background: rgba(212, 184, 150, 0.06);
-                border: 1px solid rgba(212, 184, 150, 0.12);
+                background: rgba(255, 237, 206, 0.08);
+                border: 1px solid rgba(255, 237, 206, 0.18);
                 border-radius: 12px;
                 padding: 14px;
                 text-align: center;
@@ -713,7 +634,7 @@
                 style="
                   font-family: var(--ff-display);
                   font-size: 22px;
-                  color: var(--white);
+                  color: var(--text-head);
                   font-weight: 700;
                 "
               >
@@ -820,9 +741,9 @@
           <div class="price-divider"></div>
           <ul class="price-features">
             <li><span class="check">✓</span> Logo design (2 konsep)</li>
-            <li><span class="check">✓</span> Color palette & typography</li>
+            <li><span class="check">✓</span> Color palette &amp; typography</li>
             <li><span class="check">✓</span> 2× revisi</li>
-            <li><span class="check">✓</span> File PNG & PDF</li>
+            <li><span class="check">✓</span> File PNG &amp; PDF</li>
             <li><span class="check">✓</span> Deliverable dalam 5 hari</li>
           </ul>
           <a
@@ -929,7 +850,7 @@
         <div class="faq-item" style="border-top: 1px solid var(--border-soft)">
           <div class="faq-q">
             <span class="faq-q-text">Berapa kali bisa revisi?</span>
-            <div class="faq-toggle">−</div>
+            <div class="faq-toggle">+</div>
           </div>
           <p class="faq-a">
             Mendapat revisi sesuai paket: Starter 2×, Standard unlimited, dan
@@ -1005,7 +926,7 @@
         </p>
         <div class="cta-actions">
           <a
-            href="https://wa.me/62"
+            href="https://wa.me/6285134557633"
             class="btn-cta"
             style="font-size: 14px; padding: 12px 28px"
             >Mulai Sekarang →</a
@@ -1029,35 +950,57 @@
     <footer>
       <div class="footer-top">
         <div class="footer-brand">
-          <span class="nav-logo">aurl<span>lyc</span>.co</span>
+          <a class="nav-logo" href="#">aurl<span>lyc</span>.co</a>
           <p class="footer-tagline">
             Strategic visual partner untuk brand yang ingin tampil beda dan
             diingat.
           </p>
           <div class="social-links">
-            <div class="social-btn" title="Instagram">⬡</div>
-            <div class="social-btn" title="TikTok">▶</div>
-            <div class="social-btn" title="LinkedIn">◈</div>
-            <div class="social-btn" title="WhatsApp">◎</div>
+            <a
+              class="social-btn"
+              href="https://www.instagram.com/aurllyc.co"
+              target="_blank"
+              rel="noopener"
+              title="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              class="social-btn"
+              href="https://linktr.ee/aurll.design"
+              title="Linktree"
+              ><i class="fa-brands fa-linktree"></i
+            ></a>
+            <a
+              class="social-btn"
+              href="https://www.behance.net/gallery/232649503/Portfolio-2025-Aurellia-Nur-Fitira"
+              title="Behance"
+              ><i class="fa-brands fa-behance"></i
+            ></a>
+            <a
+              class="social-btn"
+              href="https://wa.me/6285134557633"
+              title="WhatsApp"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
           </div>
         </div>
 
         <div class="footer-col">
           <h5>Services</h5>
           <ul>
-            <li><a href="#">Brand Starter Pack</a></li>
-            <li><a href="#">Social Media Design</a></li>
-            <li><a href="#">Brand Identity Suite</a></li>
-            <li><a href="#">Design Retainer</a></li>
+            <li><a href="#services">Brand Starter Pack</a></li>
+            <li><a href="#services">Social Media Design</a></li>
+            <li><a href="#services">Brand Identity Suite</a></li>
+            <li><a href="#services">Design Retainer</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h5>Company</h5>
           <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Testimonials</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#">Blog</a></li>
           </ul>
         </div>
@@ -1066,7 +1009,20 @@
           <h5>Contact</h5>
           <ul>
             <li>
-              <a href="https://www.instagram.com/aurllyc.co">Instagram DM</a>
+              <a
+                href="https://wa.me/6285134557633"
+                target="_blank"
+                rel="noopener"
+                >WhatsApp</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/aurllyc.co"
+                target="_blank"
+                rel="noopener"
+                >Instagram DM</a
+              >
             </li>
             <li><a href="mailto:orelldsgn@gmail.com">Email</a></li>
             <li><a href="#">Brief Form</a></li>
@@ -1084,6 +1040,7 @@
     </footer>
 
     <script>
+      /* ---- FAQ accordion ---- */
       document.querySelectorAll(".faq-item").forEach((item) => {
         const q = item.querySelector(".faq-q");
         const a = item.querySelector(".faq-a");
@@ -1105,6 +1062,18 @@
           if (a && toggle.textContent === "+") a.style.display = "none";
         }
       });
+
+      /* ---- Mobile hamburger ---- */
+      const btn = document.getElementById("hamburgerBtn");
+      const drawer = document.getElementById("navDrawer");
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("open");
+        drawer.classList.toggle("open");
+      });
+      function closeNav() {
+        btn.classList.remove("open");
+        drawer.classList.remove("open");
+      }
     </script>
   </body>
 </html>
